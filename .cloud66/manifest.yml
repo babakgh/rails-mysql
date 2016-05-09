@@ -12,7 +12,7 @@ staging:
                 - atop
                 - chrony
         configuration:
-            ruby_version: 2.1.5
+            ruby_version: 1.9.3p448
 
 production:
     rails: 
@@ -21,4 +21,4 @@ production:
                 - atop
                 - chrony                
         configuration:
-            ruby_version: 2.1.5
+            ruby_version: 1.9.3p448
