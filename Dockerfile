@@ -1,5 +1,5 @@
 OM ruby:2.1.8
-MAINTAINER asghar@akbar.com
+MAINTAINER babak@cloud66.com
 
 RUN apt-get update -qq && apt-get install -y build-essential
 
