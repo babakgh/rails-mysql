@@ -1,0 +1,24 @@
+development:
+    rails: 
+        server: 
+            extra_packages: 
+                - atop
+                - chrony
+                
+staging:
+    rails: 
+        server: 
+            extra_packages: 
+                - atop
+                - chrony
+        configuration:
+            ruby_version: 1.9.3p448
+
+production:
+    rails: 
+        server: 
+            extra_packages: 
+                - atop
+                - chrony                
+        configuration:
+            ruby_version: 1.9.3
