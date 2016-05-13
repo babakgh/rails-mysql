@@ -18,13 +18,4 @@ production:
       same_as: combined
   redis:
     server:
-      same_as: combinedisk_size: 20
-  rails:
-    configuration:
-      do_initial_db_schema_load: true
-      vpc_id: default
-    server:
-      same_as: combined
-  redis:
-    server:
       same_as: combined
