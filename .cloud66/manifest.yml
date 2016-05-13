@@ -1,22 +1,30 @@
-development:
-    rails: 
-        server: 
-            extra_packages: 
-                - atop
-                - chrony
-                
-staging:
-    rails: 
-        server: 
-            extra_packages: 
-                - atop
-                - chrony
-                
 production:
-    rails: 
-        server: 
-            extra_packages: 
-                - atop
-                - chrony                
-        configuration:
-            ruby_version: 2.1.5
+  postgresql:
+    configuration:
+      version: 9.4.4
+      postgis: false
+      vpc_id: default
+    server:
+      unique_name: combined
+      vendor: aws
+      region: ap-southeast-2
+      size: t2.medium
+      root_disk_size: 20
+  rails:
+    configuration:
+      do_initial_db_schema_load: true
+      vpc_id: default
+    server:
+      same_as: combined
+  redis:
+    server:
+      same_as: combinedisk_size: 20
+  rails:
+    configuration:
+      do_initial_db_schema_load: true
+      vpc_id: default
+    server:
+      same_as: combined
+  redis:
+    server:
+      same_as: combined
