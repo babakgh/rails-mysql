@@ -8,3 +8,5 @@ before_script:
 deploy:
   provider: cloud66
   redeployment_hook: "http://stage.cloud66.com/hooks/v1/stacks/redeploy/4f3ec10dc110dabe1abb3577db6bfa4c/6ad91fe75f63ad4e11b2a6708ee97074"
+  on:
+    all_branches: true
