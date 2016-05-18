@@ -29,16 +29,16 @@ qa:
     API_HUB_HOST: api.influitiveqa.com
     ASSETS_HOST: https://d1b0p5lzepxhzp.cloudfront.net
     HUB_HOST: influitiveqa.com
-    NARCI_PASSWORD: **REDACTED**
+    NARCI_PASSWORD: kosenanat
     NARCI_URL: http://narci.internal.influitiveqa.com
-    NARCI_USER: **REDACTED**
-    S3_KEY: **REDACTED**
+    NARCI_USER: kosenanat
+    S3_KEY: kosenanat
     S3_SECRET: GlQxLDjRkIXPES8gIs4D3ZAYMI5G/Z+fv9LGiws8
     S3_BUCKET: communityqa
     S3_ACL: public-read
     S3_KEY_START: uploads/
-    PLUGINATOR_USER: **REDACTED**
-    PLUGINATOR_PASSWORD: **REDACTED**
+    PLUGINATOR_USER: kosenanat
+    PLUGINATOR_PASSWORD: kosenanat
     DATABASE_URL:
   rails:
     <<: *rails
@@ -60,9 +60,9 @@ staging:
     API_HUB_HOST: api.influitives.com
     ASSETS_HOST: https://d1ixui3s78zcmw.cloudfront.net
     HUB_HOST: influitives.com
-    NARCI_PASSWORD: **REDACTED**
+    NARCI_PASSWORD: kosenanat
     NARCI_URL: http://web1.narci-service.staging.c66.me
-    NARCI_USER: **REDACTED**
+    NARCI_USER: kosenanat
     DATABASE_URL:
   rails:
     <<: *rails
@@ -87,9 +87,9 @@ demo:
     <<: *environment_vars
     API_HUB_HOST: api.influitivedemo.com
     HUB_HOST: influitivedemo.com
-    NARCI_PASSWORD: **REDACTED**
+    NARCI_PASSWORD: kosenanat
     NARCI_URL: http://narci.internal.influitivedemo.com
-    NARCI_USER: **REDACTED**
+    NARCI_USER: kosenanat
     DATABASE_URL:
   rails:
     <<: *rails
