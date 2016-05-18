@@ -1,24 +1,143 @@
-development:
-    rails: 
-        server: 
-            extra_packages: 
-                - atop
-                - chrony
-                
+defaults: &defaults
+  environment_variables: &environment_vars
+    MODULE_URL: https://github.com/openresty/headers-more-nginx-module/archive/v0.25.tar.gz
+    ASSETS_DIGEST: true
+    ASSETS_PREFIX: /assets-build
+  rails: &rails
+    configuration: &rails_configuration
+      asset_pipeline_precompile: false
+      do_initial_db_schema_load: true
+      ruby_version: 2.2.2
+    server: &rails_server
+      unique_name: web1
+      vendor: aws
+      region: us-east-1
+      size: t2.micro
+  postgresql: &pg
+    server: external
+  redis: &redis
+    server: &redis_server
+      unique_name: worker-queue
+      vendor: aws
+      region: us-east-1
+      size: t2.micro
+
+qa:
+  <<: *defaults
+  environment_variables:
+    <<: *environment_vars
+    API_HUB_HOST: api.influitiveqa.com
+    ASSETS_HOST: https://d1b0p5lzepxhzp.cloudfront.net
+    HUB_HOST: influitiveqa.com
+    NARCI_PASSWORD: **REDACTED**
+    NARCI_URL: http://narci.internal.influitiveqa.com
+    NARCI_USER: **REDACTED**
+    S3_KEY: **REDACTED**
+    S3_SECRET: GlQxLDjRkIXPES8gIs4D3ZAYMI5G/Z+fv9LGiws8
+    S3_BUCKET: communityqa
+    S3_ACL: public-read
+    S3_KEY_START: uploads/
+    PLUGINATOR_USER: **REDACTED**
+    PLUGINATOR_PASSWORD: **REDACTED**
+    DATABASE_URL:
+  rails:
+    <<: *rails
+    configuration:
+      <<: *rails_configuration
+      vpc_id: vpc-4c187228 # infl-qa-vpc
+    server:
+      <<: *rails_server
+      subnet_id: subnet-91f51bbb #infl-qa-pub-1a
+      availability_zone: us-east-1a
+  redis:
+    server:
+      same_as: web1
+
 staging:
-    rails: 
-        server: 
-            extra_packages: 
-                - atop
-                - chrony
-        configuration:
-            ruby_version: 2.1.5
+  <<: *defaults
+  environment_variables:
+    <<: *environment_vars
+    API_HUB_HOST: api.influitives.com
+    ASSETS_HOST: https://d1ixui3s78zcmw.cloudfront.net
+    HUB_HOST: influitives.com
+    NARCI_PASSWORD: **REDACTED**
+    NARCI_URL: http://web1.narci-service.staging.c66.me
+    NARCI_USER: **REDACTED**
+    DATABASE_URL:
+  rails:
+    <<: *rails
+    configuration:
+      <<: *rails_configuration
+      vpc_id: vpc-1edfa77a #infl-stg-vpc
+    server:
+      <<: *rails_server
+      subnet_id: subnet-dcae52f6 # infl-stg-pub-1a
+      availability_zone: us-east-1a
+  redis:
+    configuration:
+      vpc_id: vpc-1edfa77a #infl-stg-vpc
+    server:
+      <<: *redis_server
+      subnet_id: subnet-dcae52f6 # infl-stg-pub-1a
+      availability_zone: us-east-1a
+
+demo:
+  <<: *defaults
+  environment_variables:
+    <<: *environment_vars
+    API_HUB_HOST: api.influitivedemo.com
+    HUB_HOST: influitivedemo.com
+    NARCI_PASSWORD: **REDACTED**
+    NARCI_URL: http://narci.internal.influitivedemo.com
+    NARCI_USER: **REDACTED**
+    DATABASE_URL:
+  rails:
+    <<: *rails
+    configuration:
+      <<: *rails_configuration
+      vpc_id: vpc-e3f82687 #infl-stg-vpc
+    server:
+      <<: *rails_server
+      region: us-west-2
+      subnet_id: subnet-70d97f14
+      availability_zone: us-west-2a
+      size: m3.medium
+  redis:
+    configuration:
+      vpc_id: vpc-e3f82687
+    server:
+      <<: *redis_server
+      region: us-west-2
+      subnet_id: subnet-70d97f14
+      availability_zone: us-west-2a
 
 production:
-    rails: 
-        server: 
-            extra_packages: 
-                - atop
-                - chrony                
-        configuration:
-            ruby_version: 2.1.5
+  <<: *defaults
+  environment_variables:
+    <<: *environment_vars
+    API_HUB_HOST: api.infl.tv
+    ASSETS_HOST: https://d3dror7n6ux9k4.cloudfront.net
+    HUB_HOST: influitive.com
+    NARCI_PASSWORD:
+    NARCI_URL: http://web1.narci-service.c66.me
+    NARCI_USER:
+    DATABASE_URL:
+  rails:
+    <<: *rails
+    configuration:
+      <<: *rails_configuration
+      vpc_id: vpc-25334641 #infl-prd-vpc
+    server:
+      <<: *rails_server
+      subnet_id: subnet-56b8440e #infl-prd-pub-1c
+      availability_zone: us-east-1c
+      size: t2.small
+  redis:
+    <<: *redis
+    configuration:
+      vpc_id: vpc-25334641 #infl-prd-vpc
+    server:
+      <<: *redis_server
+      subnet_id: subnet-56b8440e #infl-prd-pub-1c
+      availability_zone: us-east-1c
+      size: t2.micro
