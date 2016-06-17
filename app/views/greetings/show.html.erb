@@ -3,7 +3,7 @@
 This ball has <%=@ball.dimples%> dimples
 <br/><br/>
 Its random_size = <%= @ball.randomsize %>
-(Was it cached internally? <%= @ball.is_cached %>)
+(Was it cached internally? <%= @ball.is_cached.htma_safe %>)
 
 <br/><br/>The value of $RAILS_STACK_PATH is: <%=@rails_stack_path%>
 
