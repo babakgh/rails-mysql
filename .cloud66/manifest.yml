@@ -21,4 +21,4 @@ production:
                 - atop
                 - chrony                
         configuration:    
-            passenger_version: 3.0.19
+            passenger_version: 5.0.28
