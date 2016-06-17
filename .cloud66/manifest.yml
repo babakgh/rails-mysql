@@ -20,5 +20,6 @@ production:
             extra_packages: 
                 - atop
                 - chrony                
-        configuration:    
+        configuration:
+            ruby_version: 2.3.1    
             passenger_version: 5.0.28
