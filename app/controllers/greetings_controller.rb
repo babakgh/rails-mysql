@@ -3,6 +3,10 @@ class GreetingsController < ApplicationController
   caches_page :hello
 
   def hello
+	p "p log"
+	puts "puts log"
+	Rails.logger.error "Rails error log"
+	  
   	@message = "I'm a Rails 4.0.0 Application"
 
   	ball = Ball.create(:dimples => Random.rand(1000))
@@ -24,6 +28,10 @@ class GreetingsController < ApplicationController
   end
 
   def show
+        p "p log"
+        puts "puts log"
+        Rails.logger.error "Rails error log"
+
   	@ball = Ball.first  	
 
   	@rails_stack_path = ENV['RAILS_STACK_PATH']
