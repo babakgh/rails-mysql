@@ -11,6 +11,7 @@ staging:
             - server:     
                 subnet_id: subnet-6b46ff0e
                 unique_name: web-1
+                vendor: aws
         configuration:
             vpc_id: vpc-64872001
             ruby_version: 2.1.5
