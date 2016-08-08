@@ -4,8 +4,6 @@ development:
             extra_packages: 
                 - atop
                 - chrony
-                
-      postgis: true
 staging:
   rails:
     configuration:
