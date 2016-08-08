@@ -12,8 +12,8 @@ staging:
                 - atop
                 - chrony
         configuration:
+            vpc_id: vpc-627d7400
             ruby_version: 2.1.5
-
 production:
     rails: 
         server: 
