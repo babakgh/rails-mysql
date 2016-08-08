@@ -9,7 +9,7 @@ staging:
     rails: 
         servers:
             - server:     
-                subnet_id: subnet-0b9d4753
+                subnet_id: subnet-6b46ff0e
                 unique_name: web-1
         configuration:
             vpc_id: vpc-64872001
