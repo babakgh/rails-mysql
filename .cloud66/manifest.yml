@@ -16,7 +16,7 @@ staging:
     servers:
       - server:
           subnet_id: subnet-0b9d4753
-          unique_name: web-1
+          unique_name: web-13
           root_disk_size: 40
           vendor: aws
           region: us-west-2
