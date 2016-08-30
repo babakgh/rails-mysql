@@ -2,10 +2,10 @@ build:
   version: 2016-03-14
   steps:
     base:
-      name: babakgh/bbase
+      name: bbase
       dockerfile: Dockerfile.base
     deployment:
-        name: babakh/ddeployer
+        name: ddeployer
         dockerfile: Dockerfile.deployment
         depends_on:
           - base
