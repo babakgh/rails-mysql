@@ -2,7 +2,7 @@
 FROM ruby:2.1.8
 MAINTAINER asghar@akbar.com
 
-RUN apt-get update -qq && apt-get install -y build-essential 
+RUN apt-get update -qq && apt-get install -y build-essential && apt-get install nodejs
 
 ENV APP_HOME /app
 RUN mkdir $APP_HOME
