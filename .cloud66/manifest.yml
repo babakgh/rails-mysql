@@ -4,16 +4,25 @@ development:
             extra_packages: 
                 - atop
                 - chrony
-                
 staging:
-    rails: 
-        server: 
-            extra_packages: 
-                - atop
-                - chrony
-        configuration:
-            ruby_version: 2.1.5
-
+  rails:
+    configuration:
+      vpc_id: vpc-627d7400
+      asset_pipeline_precompile: true
+      do_initial_db_schema_load: false
+      reserved_server_memory: 450
+      passenger_process_memory: 250
+      ruby_version: 2.3.1
+    servers:
+      - server:
+          subnet_id: subnet-0b9d4753
+          unique_name: web-13
+          root_disk_size: 40
+          vendor: aws
+          region: us-west-2
+          size: t2.medium
+  mysql:
+    server: external
 production:
     rails: 
         server: 
