@@ -1,0 +1,7 @@
+production:
+  after_rails:
+    - snippet: cloud66/passenger_nginx_module
+      target: rails
+      sudo: true
+      execute: true
+      apply_during: all
