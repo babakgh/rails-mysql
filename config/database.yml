@@ -1,12 +1,9 @@
 development:
     adapter: mysql2
-#    username: <%= ENV['MYSQL_USERNAME'] %>
-#    password: <%= ENV['MYSQL_PASSWORD'] %>
-#    database: <%= ENV['MYSQL_DATABASE'] %>
-#    host: <%= ENV['MYSQL_ADDRESS'] %>
-    pool: 100
-    host: 127.0.0.1
-    database: sample_rails_dev
+    username: <%= ENV['MYSQL_USERNAME'] %>
+    password: <%= ENV['MYSQL_PASSWORD'] %>
+    database: <%= ENV['MYSQL_DATABASE'] %>
+    host: <%= ENV['MYSQL_ADDRESS'] %>  
 staging:
     adapter: mysql2
     username: <%= ENV['MYSQL_USERNAME'] %>
