@@ -6,7 +6,7 @@ gem 'rails', '4.0.8'
 gem 'actionpack-page_caching'
 
 # Use mysql2 as the database for Active Record
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.18'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
