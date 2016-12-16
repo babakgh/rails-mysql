@@ -15,6 +15,7 @@ staging:
             ruby_version: 2.1.5
 
 production:
+    operating_system: Ubuntu1404
     rails: 
         server: 
             extra_packages: 
