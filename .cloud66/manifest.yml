@@ -1,7 +1,7 @@
 development:
-    rails: 
-        server: 
-            extra_packages: 
+    rails:
+        server:
+            extra_packages:
                 - atop
                 - chrony
 staging:
@@ -24,10 +24,10 @@ staging:
   mysql:
     server: external
 production:
-    rails: 
-        server: 
-            extra_packages: 
+    rails:
+        server:
+            extra_packages:
                 - atop
-                - chrony                
+                - chrony
         configuration:
-            ruby_version: 2.1.5
+            ruby_version: 2.3.1
