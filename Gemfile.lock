@@ -72,7 +72,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
-    mysql2 (0.3.21)
+    mysql2 (0.4.5)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
     rack (1.6.5)
@@ -146,7 +146,7 @@ DEPENDENCIES
   execjs
   jbuilder (~> 1.2)
   jquery-rails
-  mysql2 (~> 0.3.18)
+  mysql2
   rails (= 4.2.6)
   sass-rails (~> 4.0.0)
   sdoc
