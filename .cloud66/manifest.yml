@@ -1,20 +1,22 @@
 development:
-    rails: 
-        server: 
-            extra_packages: 
+    rails:
+        server:
+            extra_packages:
                 - atop
                 - chrony
-                
+
 staging:
-    rails: 
-        server: 
-            extra_packages: 
+    rails:
+        server:
+            extra_packages:
                 - atop
                 - chrony
-                
+
 production:
-    rails: 
-        server: 
-            extra_packages: 
+    rails:
+        configuratio:
+           operating_system: Ubuntu1404
+        server:
+            extra_packages:
                 - atop
-                - chrony                
+                - chrony
