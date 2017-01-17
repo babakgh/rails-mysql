@@ -14,7 +14,7 @@ staging:
 
 production:
     rails:
-        configuratio:
+        configuration:
            operating_system: Ubuntu1404
         server:
             extra_packages:
