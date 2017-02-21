@@ -31,3 +31,12 @@ production:
                 - chrony                
         configuration:
             ruby_version: 2.1.5
+    glusterfs:
+        configuration:
+            version: 3.7.2
+            replica_count: 1
+            mount_targets: ['app']
+            volumes:
+                - volume:
+                    name: cloud66-vol
+                    mount: /mnt/data-store
