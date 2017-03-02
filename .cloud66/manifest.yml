@@ -29,5 +29,3 @@ production:
             extra_packages:
                 - atop
                 - chrony
-        configuration:
-            ruby_version: 2.3.1
