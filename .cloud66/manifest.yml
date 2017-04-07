@@ -30,5 +30,5 @@ production:
                 - atop
                 - chrony                
         configuration:
-            ruby_version: 2.4.1
+            ruby_version: 2.3.4
 
