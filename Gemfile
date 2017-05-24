@@ -37,6 +37,9 @@ end
 gem 'therubyracer'
 
 gem 'execjs'
+
+gem "lograge"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
