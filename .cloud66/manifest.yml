@@ -35,3 +35,5 @@ production:
         NEWRELIC_KEY: changeme
         SMTP_USER_NAME: recus@nouvellevie.com
         SMTP_PASSWORD: changeme
+    postgresql:
+        server: external
