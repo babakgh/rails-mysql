@@ -17,21 +17,17 @@ staging:
 production:
     rails:
         server:
-          unique_name: lion
-          address: 46.101.7.16
+          unique_name: mouse
+          size: t2.large
+          region: us-east-2
+          vendor: aws
+          key_name: Default
           extra_packages:
                 - atop
                 - chrony
         configuration:
             vpc_id: default
             ruby_version: 2.1.5
-    mysql:
-        server:
-          unique_name: panter
-          size: t2.large
-          region: us-east-2
-          vendor: aws
-          key_name: Default
     environment_variables:
         DATABASE_HOST: changeme
         DATABASE_USERNAME: changeme
