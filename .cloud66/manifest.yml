@@ -25,6 +25,8 @@ production:
         configuration:
             ruby_version: 2.1.5
     mysql:
+        configuration:
+          vpc_id: default
         server:
           unique_name: panter
           size: t2.large
